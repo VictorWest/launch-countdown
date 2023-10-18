@@ -48,8 +48,15 @@ p{
     justify-content: center;
     margin: 9%;
 }
-.icons>svg{
+.icons svg{
     margin: 20px;
+}
+.icons svg:hover{
+    fill: #b1b4e5;
+}
+
+.fifthRow{
+    display: none;
 }
 
 
