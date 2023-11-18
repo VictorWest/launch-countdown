@@ -1,4 +1,4 @@
-var deadLine = new Date("dec 4, 2023, 8:00:00").getTime();
+var deadLine = new Date().getTime() + 1209600000;
 
 var x = setInterval(function(){
     var currentDate = new Date().getTime();
