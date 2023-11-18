@@ -1,34 +1,33 @@
-var deadLine = new Date().getTime() + 1209600000;
+let deadLine = new Date().getTime() + 1209600000; //Adding 14 days (in milliseconds) to the current date
 
-var x = setInterval(function(){
-    var currentDate = new Date().getTime();
-    var d = deadLine - currentDate;
+let x = setInterval(function(){
+    let currentDate = new Date().getTime();
+    let d = deadLine - currentDate;
 
-    var days = Math.floor(d / (1000 * 60 * 60 * 24));
+    let days = Math.floor(d / (1000 * 60 * 60 * 24));
     console.log(days);
     document.querySelector(".firstRow").innerHTML = `${days}`;
-    var hours = Math.floor((d % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let hours = Math.floor((d % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     console.log(hours);
     document.querySelector(".secondRow").innerHTML = `${hours}`;
-    var minutes = Math.floor((d % (1000 * 60 * 60)) / (1000 * 60));
+    let minutes = Math.floor((d % (1000 * 60 * 60)) / (1000 * 60));
     console.log(minutes);
     document.querySelector(".thirdRow").innerHTML = `${minutes}`;
-    var seconds = Math.floor((d % (1000 * 60)) / (1000));
+    let seconds = Math.floor((d % (1000 * 60)) / (1000));
     console.log(seconds);
     document.querySelector(".fourthRow").innerHTML = `${seconds}`;
 
     if(d < 0){
         clearInterval(x);
-        document.getElementById("heading").innerHTML = `SUCCESS IN YOUR EXAMS`;
+        document.getElementById("heading").innerHTML = `LAUNCH!`;
         document.querySelector(".firstRow").innerHTML = `...`;
         document.querySelector(".secondRow").innerHTML = `...`;
         document.querySelector(".thirdRow").innerHTML = `...`;
         document.querySelector(".fourthRow").innerHTML = `...`;
-        for(var i = 0; i < (document.querySelectorAll("p")).length; i++){
+        for(let i = 0; i < (document.querySelectorAll("p")).length; i++){
             document.querySelectorAll("p")[i].innerHTML = "";
             console.log((document.querySelectorAll("p")).length);
-        }
-        
+        }   
     }
 }, 1000);
 
